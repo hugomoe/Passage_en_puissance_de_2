@@ -19,9 +19,9 @@
 
 for(int l=0;l<pd;l++){ 
 
-	float refftimg[w*h]; 
-	float imfftimg[w*h];
-	float img_aux[w*h];
+	float *refftimg= malloc(w*h*sizeof(float));
+	float *imfftimg= malloc(w*h*sizeof(float));
+	float *img_aux= malloc(w*h*sizeof(float));
 	for(int i=0;i<w*h;i++){
    		img_aux[i]=img[pd*i+l]; 
 	}
