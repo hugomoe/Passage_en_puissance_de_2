@@ -897,11 +897,11 @@ int main(int argc, char *argv[])
 	kw=pui2(e->iw);
 	kh=pui2(e->ih);
 	if(kw<kh){kw=kh;}else{kh=kw;}
-//	printf("\nkw:%d kh;%d w:%d h:%d\n",kw,kh,e->iw,e->ih);
-//	printf("%d %d",kw,kh);
+printf("\nkw:%d kh;%d w:%d h:%d\n",kw,kh,e->iw,e->ih);
+	printf("%d %d",kw,kh);
 	
 	if(!(kw==e->iw && kh==e->ih)){	
-		float img_final[kw*kh*3];
+		float *img_final= malloc(kw*kh*3*sizeof(float));
 		for(int i=0;i<kw*kh*3;i++){img_final[i]=0;}
 		zoom(e->img,e->iw,e->ih,e->pd,kw,kh,img_final);
 		e->img = img_final;
